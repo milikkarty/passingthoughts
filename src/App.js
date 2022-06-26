@@ -1,23 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+
+import Header from './components/Header';
+import FormThought from './components/FormThought';
+import Thought from './components/Thought';
+
+import { generateId, expire } from './utilities/utilities';
 
 function App() {
+
+  const [thoughts, setThoughts] = useState([
+    {
+      id: generateId(),
+      text: 'This is a place for your passing thoughts.',
+      expiresAt: expire()
+    },
+    {
+      id: generateId(),
+      text: 'They\'ll be removed after 15 seconds.',
+      expiresAt: expire()
+    }
+  ]);
+
+  const addThought = thought => {
+    setThoughts(thoughts => [
+      thought,
+      ...thoughts
+    ]);
+  };
+
+  const removeThought = thoughtIdToRemove => {
+    setThoughts(thoughts =>
+      thoughts.filter(thought => thought.id !== thoughtIdToRemove)  
+    );
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+        <FormThought addThought={addThought} />
+        <ul className='thoughts'>
+          {thoughts.map(thought => (
+            <Thought
+              key={thought.id}
+              thought={thought}
+              removeThought={removeThought}
+            />
+          ))}
+        </ul>
+      </main>
     </div>
   );
 }

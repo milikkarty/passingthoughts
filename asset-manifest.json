@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/passingthoughts/static/css/main.4d59572a.css",
+    "main.js": "/passingthoughts/static/js/main.1016b25d.js",
+    "index.html": "/passingthoughts/index.html",
+    "main.4d59572a.css.map": "/passingthoughts/static/css/main.4d59572a.css.map",
+    "main.1016b25d.js.map": "/passingthoughts/static/js/main.1016b25d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d59572a.css",
+    "static/js/main.1016b25d.js"
+  ]
+}

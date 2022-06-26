@@ -24,16 +24,21 @@ const FormThought = props => {
     };
 
     return (
-        <form className="formThought" onSubmit={handleSubmit}>
-            <input
+        <form className='formThought' onSubmit={handleSubmit}>
+            <div>
+                <h1>Passing Thoughts</h1>
+                <button type='submit'>ADD</button>
+                <span className='buttonSpan1'></span>
+                <span className='buttonSpan2'></span>
+            </div>
+            <textarea
                 aria-label="What's on your mind?"
                 autoFocus
                 placeholder="What's on your mind?"
-                type="text"
+                type='text'
                 value={text}
                 onChange={handleTextChange}
             />
-            <button type="submit">Submit</button>
         </form>
     );
 };

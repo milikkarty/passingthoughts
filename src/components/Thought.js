@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 const Thought = props => {
 
@@ -21,11 +21,11 @@ const Thought = props => {
     };
 
     return (
-        <li className="thought">
-            <p className="text">{thought.text}</p>
+        <li className='thought'>
+            <p className='text'>{thought.text}</p>
             <button
-                aria-label="Remove thought"
-                className="removeButton"
+                aria-label='Remove thought'
+                className='removeButton'
                 onClick={handleRemoveClick}
             >&times;</button>
         </li>

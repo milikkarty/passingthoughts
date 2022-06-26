@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import Header from './components/Header';
 import FormThought from './components/FormThought';
 import Thought from './components/Thought';
 
@@ -35,20 +34,17 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <FormThought addThought={addThought} />
-        <ul className='thoughts'>
-          {thoughts.map(thought => (
-            <Thought
-              key={thought.id}
-              thought={thought}
-              removeThought={removeThought}
-            />
-          ))}
-        </ul>
-      </main>
+    <div className='App'>
+      <FormThought addThought={addThought} />
+      <ul className='thoughts'>
+        {thoughts.map(thought => (
+          <Thought
+            key={thought.id}
+            thought={thought}
+            removeThought={removeThought}
+          />
+        ))}
+      </ul>
     </div>
   );
 }
